@@ -92,16 +92,17 @@
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="classicBot" sap:VirtualizedContainerService.HintSize="1077,2512" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="classicBot" sap:VirtualizedContainerService.HintSize="1077,2345" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="scondBot" sap:VirtualizedContainerService.HintSize="518,2308" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="scondBot" sap:VirtualizedContainerService.HintSize="518,2291" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strTemp" />
         <Variable x:TypeArguments="x:String" Name="strHumidity" />
@@ -117,7 +118,7 @@
           <OutArgument x:TypeArguments="x:String">[cityName]</OutArgument>
         </ui:InputDialog.Result>
       </ui:InputDialog>
-      <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="484,1041" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="www.google.com">
+      <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="484,1001" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="www.google.com">
         <ui:OpenBrowser.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -214,7 +215,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'push button  Minimize'" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[&quot;Temp :&quot; &amp; strTemp &amp; vbCr &amp; &quot;Humidity :&quot; &amp; strHumidity &amp; vbCr &amp; &quot;Status :&quot; &amp; strStatus]">
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'push button  Minimize'" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[&quot;City Name : &quot; + GlobalVariablesNamespace.GlobalVariables.cityName + vbCrLf + New String(&quot;*&quot;c, 50) + vbCrLf + &quot;Temperature : &quot; + strTemp + vbCrLf + &quot;Humidity : &quot; + strHumidity + vbCrLf + &quot;Status : &quot; + strStatus + vbCrLf]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="97d4b6c4-efd3-4f93-bbf4-12bd9c6fa221" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /&gt;&lt;ctrl name='Minimize' role='push button' /&gt;">
                     <ui:Target.TimeoutMS>
@@ -238,7 +239,7 @@
                   </ui:Target>
                 </ui:SendHotkey.Target>
               </ui:SendHotkey>
-              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Edit'" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[&quot;Weather-report-&quot; &amp; cityName &amp; &quot;.txt&quot;]">
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Edit'" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[&quot;D:\BA ITI\11-RPA\Day 2\weather-report-in &quot;+cityName+ Now.ToString(&quot;yyyyMMdd_HHmm&quot;) + &quot;.txt&quot;]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0573fd36-7a72-47f3-9e45-0b099cb91e2d" InformativeScreenshot="28a4edfee2cc7f6b995b62eb7804c8f6" Selector="&lt;wnd app='notepad.exe' cls='#32770' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
                     <ui:Target.TimeoutMS>

@@ -2,7 +2,7 @@
   "name": "BlankProcess",
   "projectId": "8e7b288b-0a5c-4827-882e-f272dfe69d6e",
   "description": "Blank Process",
-  "main": "Main.xaml",
+  "main": "firstWokFlow.xaml",
   "dependencies": {
     "UiPath.System.Activities": "[25.8.1]",
     "UiPath.UIAutomation.Activities": "[25.10.16]"
@@ -45,8 +45,8 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "67f315ff-d5f4-44e7-9d46-3eb80b69950d",
+      "filePath": "firstWokFlow.xaml",
+      "uniqueId": "8687740b-8dec-4b0a-a4b9-e2a7ab9e4749",
       "input": [],
       "output": []
     }

@@ -2,9 +2,41 @@
   "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
   "entryPoints": [
     {
-      "filePath": "Main.xaml",
-      "uniqueId": "67f315ff-d5f4-44e7-9d46-3eb80b69950d",
-      "type": "process"
+      "filePath": "firstWokFlow.xaml",
+      "uniqueId": "8687740b-8dec-4b0a-a4b9-e2a7ab9e4749",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "cityName": {
+            "type": "string"
+          },
+          "strMovie": {
+            "type": "string"
+          },
+          "argument1": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "strType": {
+            "type": "string"
+          },
+          "out_strGettemp": {
+            "type": "string"
+          },
+          "out_strGetHumidity": {
+            "type": "string"
+          },
+          "out_strGetStatus": {
+            "type": "string"
+          }
+        }
+      }
     }
   ]
 }
