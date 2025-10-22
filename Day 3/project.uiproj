@@ -1,0 +1,6 @@
+{
+  "Name": "Day 3",
+  "ProjectType": "Process",
+  "Description": "creat dictionary and store in it directors name , diuration , title , puplish year and rating of movie from IMDB",
+  "MainFile": "DictionaryProcess.xaml"
+}

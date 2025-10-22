@@ -1,0 +1,263 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="getMovieHomePage" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="strDuration" Type="OutArgument(x:String)" />
+    <x:Property Name="strDirectors" Type="OutArgument(x:String)" />
+    <x:Property Name="strPopularity" Type="OutArgument(x:String)" />
+    <x:Property Name="strRating" Type="OutArgument(x:String)" />
+    <x:Property Name="strYear" Type="OutArgument(x:String)" />
+    <x:Property Name="strMovieName" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Semantic.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1044,2205" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="filePath" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[new Dictionary(of string,string)]" Name="dicMovieInfo" />
+      <Variable x:TypeArguments="x:String" Name="strNotePadText" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="536,2182" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome IMDb Ratings, Reviews, and Where to Wa" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="502,2099" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="ce5d52d0-0cc4-4765-820b-0adc80afadad" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,1818" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT suggestion-search'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,288" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="ce5d52d0-0cc4-4765-820b-0adc80afadad" Text="[strMovieName+&quot;[k(enter)]&quot;]" Version="V5">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com" CVScreenId="485a7a0b-9be7-451b-8986-6ab4e8a1a50b" ContentHash="dBjAvVrPzkuAOxBMGxZRUw" CvElementArea="238, 105, 716, 34" CvType="InputBox" DesignTimeRectangle="291, 107, 606, 32" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='suggestion-search' tag='INPUT' type='text' class='imdb-header-search__input searchTypeahead__input react-autosuggest__input' placeholder='Search IMDb' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="45852003-c5d2-4454-bff9-9017566e963d" InformativeScreenshot="15f1805c0579eb0cdc5f930576626906.png" IsResponsive="True" Reference="F-x0-sb8EU62STm8ahGaiw/BkI-YQ3jq0COKxgwA4rEqg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='IMDb: Ratings, Reviews, and Where to Watch the Best Movies &amp;amp; TV Shows' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="244, 113, 18, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='ipc-btn__text' parentid='nav-search-form' tag='SPAN' type='' aaname='All' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='All' /&gt;" Guid="b5f0da17-f7e5-4c9a-ac16-406f06ea48e2" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+                <uix:NTypeInto.VerifyOptions>
+                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                  </uix:VerifyExecutionTypeIntoOptions>
+                </uix:NTypeInto.VerifyOptions>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Coco2017Anthony Gonzale…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,227" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ce5d52d0-0cc4-4765-820b-0adc80afadad" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/find" ContentHash="9_NVrUcZUkaH1P-s_14qsQ" DesignTimeRectangle="32, 317, 608, 77" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='__next' tag='LI' /&gt;" Guid="5cfd002e-ff1c-4510-acbb-c003c29a3fda" InformativeScreenshot="5fb3f7127099447ac1e31f044d67ae40.png" Reference="F-x0-sb8EU62STm8ahGaiw/ZYJ1YbBI2E2etuK1-nkDYA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Find - IMDb' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NGetText DisplayName="Get Text 'Coco'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="ce5d52d0-0cc4-4765-820b-0adc80afadad" TextString="[strYear]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt2380307" CVScreenId="01c63b33-a2d6-4df7-ae6b-7643a4864ba2" ContentHash="AknQrQL6B0KIT424c6ir5A" CvType="AnyWordGroup" DesignTimeRectangle="68, 253, 32, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='__next' tag='A' type='' class='ipc-link ipc-link--baseAlt ipc-link--inherit-color' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="177e1dc0-d235-43fe-b970-fdcd7ccf15ed" InformativeScreenshot="d7d0ad6df76eaebd7251eb17bb707b07.png" Reference="F-x0-sb8EU62STm8ahGaiw/_ohS8S4qq0yTwaydUoJT_g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Coco (2017) - IMDb' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="01c63b33-a2d6-4df7-ae6b-7643a4864ba2" CvTextArea="67, 204, 112, 40" CvTextArgument="Coco" CvType="Text" DesignTimeRectangle="68, 196, 111, 58" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='hero__primary-text' parentid='__next' tag='SPAN' type='' aaname='Coco' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Coco' /&gt;" Guid="2266731b-99f3-4976-bb95-73762031230b" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'IMDb RATING'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="ce5d52d0-0cc4-4765-820b-0adc80afadad" TextString="[strRating]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt2380307" CVScreenId="01c63b33-a2d6-4df7-ae6b-7643a4864ba2" ContentHash="k43a63tF-0WJCZBFennC3Q" CvType="AnyWordGroup" DesignTimeRectangle="965, 225, 60, 18" ElementType="Text" ElementVisibilityArgument="Interactive" Guid="fdd5ef9e-ea94-4907-905b-3a9aa8df29d5" InformativeScreenshot="0b5f6712d9b7b3b3c9a0ce60883ca745.png" Reference="F-x0-sb8EU62STm8ahGaiw/CY51vktmbES7ZVgH04_j4Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Coco (2017) - IMDb' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V6" WaitForReadyArgument="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="01c63b33-a2d6-4df7-ae6b-7643a4864ba2" CvTextArea="930, 204, 97, 12" CvTextArgument="IMDb RATING" CvType="Text" DesignTimeRectangle="932, 203, 96, 16" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='IMDb RATING' parentid='__next' tag='DIV' type='' class='sc-9d3bc82f-1 lhxLQH' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='IMDb RATING' /&gt;" Guid="534acc9b-81d3-4223-951d-0833c6982d1c" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'Popularity'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="ce5d52d0-0cc4-4765-820b-0adc80afadad" TextString="[strPopularity]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt2380307" CVScreenId="01c63b33-a2d6-4df7-ae6b-7643a4864ba2" ContentHash="THb9a8EeG0-jrKLuAePJgg" CvType="AnyWordGroup" DesignTimeRectangle="1175, 224, 113, 34" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;span&amp;gt;div' idx='2' parentid='__next' tag='DIV' /&gt;" Guid="3a7e83ce-f1d4-459b-af99-167f98151b94" InformativeScreenshot="bb65110564f3c1815bd97bb82281195e.png" Reference="F-x0-sb8EU62STm8ahGaiw/ybxHy648n0OEXWeP_q1QAQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Coco (2017) - IMDb' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'Directors'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="ce5d52d0-0cc4-4765-820b-0adc80afadad" TextString="[strDirectors]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt2380307" CVScreenId="1964b690-a1af-46e8-85c2-87d525449319" ContentHash="wpKa3pakN06KdlgDBh3VTw" CvType="AnyWordGroup" DesignTimeRectangle="146, 288, 735, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='ipc-metadata-list-item__content-container' parentid='__next' tag='DIV' /&gt;" Guid="9d7c5244-4293-4e50-ab6e-f04b7f7cfd0e" InformativeScreenshot="01ddd9a3299470cf4b54f570e520ac9c.png" Reference="F-x0-sb8EU62STm8ahGaiw/b4PDOh1zekyxvhg7Z_CHmg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Coco (2017) - IMDb' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strDirectors]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(strDirectors, "([a-z])([A-Z])", "$1 · $2")]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <uix:NGetText DisplayName="Get Text 'Duration'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="ce5d52d0-0cc4-4765-820b-0adc80afadad" TextString="[strDuration]" Version="V5">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="imdb.com/title/tt2380307" CVScreenId="8530c5cb-e851-4553-b464-dcf12d945229" ContentHash="7RRaB_1sDkyylyxd4tiaNQ" CvType="AnyWordGroup" DesignTimeRectangle="137, 253, 66, 20" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='presentation' isleaf='1' tag='LI' /&gt;" Guid="272908e6-e444-4c7a-8715-9b82fc5f076a" InformativeScreenshot="682e0a10f3de079ea33dac615a31cd99.png" Reference="F-x0-sb8EU62STm8ahGaiw/ITymJgUZ2U6U5suwrJPkAw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Coco (2017) - IMDb' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <Assign sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[dicMovieInfo]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" xml:space="preserve">[New Dictionary(Of String, String) From {
+    {"Title", strMovieName},
+    {"Director", strDirectors},
+    {"Duration", strDuration},
+    {"Year", strYear},
+    {"Rating", strRating}
+}]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="434,115" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strNotePadText]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[String.Join(Environment.NewLine, dicMovieInfo.Select(Function(kvp) kvp.Key &amp; ": " &amp; kvp.Value))]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:WriteTextFile FileName="{x:Null}" Output="{x:Null}" DisplayName="Write Text File" File="[LocalResource.FromPath(&quot;movie-info&quot;)]" sap:VirtualizedContainerService.HintSize="434,169" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strNotePadText]" />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="20, 2, 687, 735" BrowserType="Chrome" ContentHash="IPK1lOoyM0i9fEjobJ1MFQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAbxSURBVFhHpZZtTFvnFcf9pWuypg3tmjVrGmLeEoMBG2PaJBDb2CkvyQJpvlXtFqRpmrSXT5s67a3pl0nTptXkhdAklEsCbZdG3VsrVe3AhhBCs3ZDi5ZAo21OA5hAOztNmrXhXj9n//M8j415SUe7I/30P+fh+vzPufcasC03YgF3zkzQ0zITrDLAyPshb3ImVEXTQS/NBDn3RmeClcZ0qHIvX6s/9v/HVIPbfjVU1com2kxcra2k6VovqBQM14sIVBpTAbddt/nsoTb2htlUGgWUWcYQ9dWAR0wFOPcgV8r1VMCj8AOfZ59uufzgyWES00a6sUfm8ww0cTZiuPZViLi/Qp1xrohNbV7m3ZiurXChUSzbIIO/QjDKUBlpE4r73BmdhE5ucys4V/X/HoI3h1EsvYFSjTaa9Kmm8W3aSDXPMJGmxkWTNS4BBaoer3ZhCMfSQ/Azh1FMGWU1z5ipxnIA1hq3kDUbaENlJHMxLmul49XljFDqii35LZnwucMZE4XI3khvo41Uzg1lzc1l7aIrOGO0KV3ZupAycWVLWVjbqnC/tNve/h3/nAmboqk2I7mNNpn57jfoxss9ZMYnKR3i5rskZl4la2QXWecqGcGaYn3LQ5JzHpx5BM5kTcNZ70PlS3uMbUYzjYUq1Fb6dknFxDKvr6YbJ3u0JVE8Kah/bBaYdGkqpU8xzNSLZL3jJ/OtChgxbgzhxjDQYbeqoajVXXAbu3M8LzxGzL4fBjO3io1Z39tSRuN1W+nWpTFp8JeYSd8yPqKqZ65R1T4N8qbwdYqOzsprxM0xst6ugZmLDZUOc85aDi3HEOVJGsG74H5hd4u7ZzdVANb+Jq80ZfCsBOv133TLxkein5AXhhmezso1R3ENh4h3K7PhMk1pljJOMXumpMXm7m42ALm6m4S7p1k8+Ys6ury5lN7b7BTMxGP1siFvV/l0UuLROse1eefv4C5xpC7sFdZZJ5lnS8hagtRwiWFzdTdHXScwwIkmTTO9useLIZwUe8RJN177nWy289kPqeJnyTlglNF0rutvdt6QnxFTJ4R5thhm2TgwlINS0NRQ8Yit/HhTsvz4LkpT1rWLth9spL/7yij2cIm4dWmUxuIWudF8MYnbkKTJJF7MTyZguBGGmiEJMSZInS1K2MqMr8JUImSu659/u5piVcWCN4lcnCXXTxNLA7P5dYLKoRH9QlpDRWSeKSSLQW4NaZV1gbCVdu6kUpiWGjuF1C6lj7Q30vkap2zSd/EWlaHpQtgoW7PP+zA0h3WmAEb5wjoDhgowTD7O5uABks7OHUKxk6BAqvjeUz5hxidoMpGi0p/8+zMxiscmProAkzwyB/Ogdgxhl7XKN3CdsJU8v+OvJR2NpNhBqGXuZH2+UQz2n5SbtHRcJycaO38MWD+Ful9dk59JTZ+CGRvlCnMwlyzJBrBecG4Oro/aHB0NRvGxRpqjQQ7gONYgOP/6a0/JZn/+1yyVwLwYKP1A5nP13HkvHhmH9fYWMk+vBw/B9CHBqnOyWE+vM2yOow0tIGPIyPpovQCsdPy8+ioe6rtJjh99QA6YSF0Izg/1/kdee228E4brYLYO2z6I/EGYK6y0Dqzba7MbgZziI/XJTUfqKRsH69E6wXi79ojR9/8hG//pwi0K/jJJm2CYzdeOfUjn/qlevInEu5QYLCFz4CuatTBdK9JqnX5A5hTNUX+WNz1X37rpuTraqJH5kTqRroHwGntE1/nfSgOOi5OWHIaZwEuaDr6m849bsN1aGD+QwWLt/7JUa2CNsPrXGNKcw9HeYN/Y/igxRVrTeRaisH27CPQ8Sa+MvkEX9R3hGL9+lYy/vUJP/P4H5O/wwWiNYkBr//0ytwbuFzIH2H7+f0ZFbaHWosPbKU1hG+ujxKaFhyWkNCT4ZxldwKk/FMHkS8pU6n3YVipZyFlTA/ct/k/ZHg7kFBwOxQraVOOCQyEqBKx8JpXP2ubX2Tze9TDM7hVm9F4YAlaAM605wormxLTl4sAQ9oK2YCzdMP9gkApA/qGgkHCu66XOL7+JZxxdjQHuAathuBqGUNSa2KJbvzB4iPwDtTHZ9EAt5R2sFQznafJY8XNWmR8I0ve7y8mM3I1N71EKrOgqmK4SnM9G7ob5ik83TwcPkbe/NgbIfiAg8vYHpMochvb9Kk9T076VLr+B5xxZxabQu+ZhRe6Kfbxc8+zAIM/YW2F+W/wYxi86Xs4ns28ljL4oMSMrBNdmBPStDGe+758n+G7khv3GhrCfNrT6Re6zPsF5btgn6+q2zTBZobmTzF4QuTNp9q5s/fj1z7H17QKD5Kz/9bYWDNCFAaLQJKCTp/A7PXJHItX7hZFU7wpjtu+OluVvbLP9F5lmWAkTeM7rAAAAAElFTkSuQmCC" InformativeScreenshot="74416a84b80ad11359cc7c3a12953e53.jpg" Reference="F-x0-sb8EU62STm8ahGaiw/UgMhgAN9AkK6qeUR9TwSDg" Selector="&lt;html app='chrome.exe' title='IMDb: Ratings, Reviews, and Where to Watch the Best Movies &amp;amp; TV Shows' /&gt;" Url="https://www.imdb.com/?ref_=hm_nv_home" Version="V2" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
