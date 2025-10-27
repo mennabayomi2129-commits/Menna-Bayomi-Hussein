@@ -1,0 +1,24 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "59afc45a-41a2-4f8e-a80d-f13bbf339bbc",
+      "type": "process"
+    },
+    {
+      "filePath": "WorkFolws\\Main_RPA_Challenge.xaml",
+      "uniqueId": "2a18d862-f665-4bcd-b475-063124bdffdd",
+      "type": "process",
+      "input": {
+        "type": "object",
+        "properties": {
+          "in_strRPAChallenge": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    }
+  ]
+}

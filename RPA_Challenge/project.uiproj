@@ -1,0 +1,6 @@
+{
+  "Name": "RPA_Challenge",
+  "ProjectType": "Process",
+  "Description": "Automates the RPA Challenge by filling form data from an Excel file using Modern UiPath activities with Try-Catch error handling and logging",
+  "MainFile": "WorkFolws\\Main_RPA_Challenge.xaml"
+}
