@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="jUGrLYTw7E6Ib9IW-Tyjfw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="acme-test.uipath.com/work-items" CVScreenId="8862d655-1ee2-4127-bb36-85ed560b88a7" CvTextArea="313, 445, 32, 13" CvTextArgument="WIID" CvType="Text" DesignTimeRectangle="306, 433, 156, 37" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='WIID' tableRow='1' tag='TH' /&gt;" Guid="b2856607-901f-45ca-b5de-f61838596c35" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a569e96292df8538011cf511fe12ba08.png" xmlns="">0K9O9ctQ-_UaCbPPAtDTEsA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Highlight</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
